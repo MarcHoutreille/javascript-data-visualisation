@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" class="style">
+</head>
+<body>
+    <div class="container">
+        <canvas id="myChart">
+
+        </canvas>
+
+        <script>
+            let myChart = document.getElementById("myChart").getContext('2d');
+
+            // Global Options
+            Chart.defaults.global.defaultFontFamily = 'Arial';
+
+            Chart.defaults.global.defaultFontColor = '#777';
+
+
+            let massPopChart = new Chart(myChart, {
+                type:'bar', // bar,horizontalBar,pie,line,doughnut,radar,polarArea
+                data:{
+                    labels:['Boston','Worcester','Springfield','Lowell','Cambridge','New Bedford'],
+                    datasets:[{
+                        label:'Population',  //here the countries will go
+                        data:[
+                            185418,
+                            486484,
+                            44684,
+                            468879,
+                            854841,
+                            541896
+                        ],
+                        backgroundColor:[
+                            "rgba(255,99,132,0.6)",
+                            "rgba(54,58,32,0.6)",
+                            "rgba(75,173,35,0.6)",
+                            "rgba(255,122,1,0.6)",
+                            "rgba(77,99,132,0.6)",
+                            "rgba(122,14,95,0.6)",
+
+
+                        ]
+                              }]
+                },
+                options:{
+
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
